@@ -1,4 +1,0 @@
-name: py_test
-dependencies:
-- python
-- pydicom
