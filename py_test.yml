@@ -2,5 +2,3 @@ name: py_test
 dependencies:
 - python
 - pydicom
-- pip:
-    - pypi-package-name
