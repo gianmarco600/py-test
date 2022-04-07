@@ -15,7 +15,7 @@ with open(fpath2, 'rb') as infile:
 
 
 plt.imshow(ds.pixel_array, cmap=plt.cm.bone) 
-plt.savefig('collo.jpeg')
+plt.savefig('images/collo.png')
 plt.show()
 
     
