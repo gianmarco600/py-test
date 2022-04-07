@@ -1,12 +1,26 @@
 from pydicom.uid import ExplicitVRLittleEndian
 import os
+import time
 from pynetdicom import AE, debug_logger, evt, AllStoragePresentationContexts, ALL_TRANSFER_SYNTAXES
 from pynetdicom.sop_class import CTImageStorage
 from pydicom.filewriter import write_file_meta_info
 from pydicom import dcmread
+import matplotlib.pyplot as plt
+from watchdog.observers import Observer
+from watchdog.events import PatternMatchingEventHandler
 
 
 debug_logger()
+
+# def readImg(path):
+        # with open(path, 'rb') as infile:
+            # ds = dcmread(infile)
+            # plt.imshow(ds.pixel_array, cmap=plt.cm.bone) 
+            # plt.savefig(f"images{ds.PatientName}-{ds.PatientID}")
+            # plt.show()
+
+# -{ds.AcquisitionDateTime}
+
 
 def handle_store(event, storage_dir):
     """Handle EVT_C_STORE events."""
@@ -35,8 +49,11 @@ def handle_store(event, storage_dir):
         # mycode end
         f.write(event.request.DataSet.getvalue())
    
+    # readImg(fname)
+
 
     return 0x0000
+
 
 # handlers degli eventi scatenati
 handlers = [(evt.EVT_C_STORE, handle_store, ['out'])]
