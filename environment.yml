@@ -1,10 +1,11 @@
 name: py_test
 channels:
-  - default
-  - conda-forge
+    - default
+    - conda-forge
 dependencies:
-  - python
-  - numpy
-  - pandas
-  - pydicom
-  - pynetdicom
+    - python
+    - numpy
+    - pandas
+    - pydicom
+    - pynetdicom
+    - matplotlib
