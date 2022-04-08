@@ -41,13 +41,8 @@ def handle_store(event, storage_dir):
         f.write(b'DICM')
         # data_set = dcmread(f)
         write_file_meta_info(f, event.file_meta)
-        # Write the raw encoded dataset
-        # mycode start
-        # date = data_set[0x0008,0x0012]
-        # user = data_set[0x0010,0x0010]
-        # print(date, user)
-        # mycode end
         f.write(event.request.DataSet.getvalue())
+        f.save_as()
    
     # readImg(fname)
 
