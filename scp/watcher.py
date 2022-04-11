@@ -33,8 +33,7 @@ def watcher():
         if(len(ds.pixel_array) > 0):
             image= ds.pixel_array
             print(image)
-            plt.imshow(image, cmap=plt.cm.bone) 
-            plt.savefig(f"out\images\{ds.PatientName}-{ds.PatientID}")
+            plt.imsave(f"out\images\{ds.PatientName}-{ds.PatientID}.pdf",image, cmap=plt.cm.bone) 
             
         # print(ds)
         # name = ds.PatientName
